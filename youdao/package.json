@@ -1,0 +1,20 @@
+{
+  "name": "simple_pdf_translator",
+  "version": "0.1.0",
+  "description": "A simple pdf viewer with translate function",
+  "repository": "https://gitee.com/WCX1024979076/pdf-viewer",
+  "author": {
+    "name": "WCX1024979076",
+    "url": "https://github.com/WCX1024979076"
+  },
+  "devDependencies": {
+	"axios": "^1.2.1",
+	"crypto-js": "^4.1.1",
+	"js-md5": "^0.7.3"
+  },
+  "dependencies": {
+    "axios": "^1.2.1",
+	"crypto-js": "^4.1.1",
+	"js-md5": "^0.7.3"
+  }
+}

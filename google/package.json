@@ -1,0 +1,16 @@
+{
+  "name": "simple_pdf_translator",
+  "version": "0.1.0",
+  "description": "A simple pdf viewer with translate function",
+  "repository": "https://gitee.com/WCX1024979076/pdf-viewer",
+  "author": {
+    "name": "WCX1024979076",
+    "url": "https://github.com/WCX1024979076"
+  },
+  "devDependencies": {
+	"axios-https-proxy-fix": "^0.17.1"
+  },
+  "dependencies": {
+    "axios-https-proxy-fix": "^0.17.1"
+  }
+}
