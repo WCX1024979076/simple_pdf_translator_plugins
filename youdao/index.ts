@@ -17,6 +17,7 @@ module.exports = (ctx) => {
     from: 'en',
     to: 'zh',
     appKey: userConfig.appKey,
+    secertKey: userConfig.secertKey
   };
 
   const config = [
@@ -41,15 +42,14 @@ module.exports = (ctx) => {
   }
 
   const translate = (q) => {
-    const { from, to, appKey, apiServer } = info;
-    const key = userConfig.secertKey;
+    const { from, to, appKey, apiServer, secertKey} = info;
     let salt = Date.parse(new Date()) / 1000;
     let curtime = Math.round(new Date().getTime() / 1000);
     let str1 = "";
     if (q.length <= 20)
-      str1 = appKey + q + salt + curtime + key;
+      str1 = appKey + q + salt + curtime + secertKey;
     else
-      str1 = appKey + q.substr(0, 10) + q.length + q.substr(q.length - 10, 10) + salt + curtime + key;
+      str1 = appKey + q.substr(0, 10) + q.length + q.substr(q.length - 10, 10) + salt + curtime + secertKey;
     let sign = CryptoJS.SHA256(str1).toString(CryptoJS.enc.Hex);
     let url = apiServer;
     axios({

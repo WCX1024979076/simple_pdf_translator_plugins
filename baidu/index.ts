@@ -16,7 +16,8 @@ module.exports = (ctx) => {
   let userConfig = ctx.getConfig('baidu');
   if (!userConfig) {
     ctx.setConfig("baidu", {
-      "appid": ""
+      "appid": "",
+      "secretkey": ""
     })
     userConfig = ctx.getConfig('baidu');
   }
@@ -26,6 +27,7 @@ module.exports = (ctx) => {
     from: 'en',
     to: 'zh',
     appid: userConfig.appid,
+    secretkey: userConfig.secretkey
   };
 
   const config = [
@@ -43,7 +45,7 @@ module.exports = (ctx) => {
   }
 
   const translate = (q) => {
-    const { from, to, appid, apiServer } = info;
+    const { from, to, appid, apiServer, secretkey} = info;
     const salt = Date.parse(new Date()) / 1000;
     let params = {
       q,
@@ -51,7 +53,7 @@ module.exports = (ctx) => {
       to,
       appid,
       salt,
-      sign: md5(appid + q + salt + 'kPdITme1hd064yblpbid'),
+      sign: md5(appid + q + salt + secretkey),
     };
     let url = apiServer;
     axios({
