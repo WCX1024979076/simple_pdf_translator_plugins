@@ -3,11 +3,11 @@ const Tencent = require('@opentranslate/tencent')
 module.exports = (ctx) => {
   let userConfig = ctx.getConfig('tengxun');
   if (!userConfig) {
-	ctx.setConfig("tengxun", {
-	  "secretId": "",
-	  "secretKey": ""
+    ctx.setConfig("tengxun", {
+      "secretId": "",
+      "secretKey": ""
     })
-	userConfig = ctx.getConfig('tengxun');
+    userConfig = ctx.getConfig('tengxun');
   }
   const config = [
     {
@@ -29,7 +29,7 @@ module.exports = (ctx) => {
     ctx.log('腾讯翻译注册成功');
   }
   const translate = (translate_en_str) => {
-    const tencent = new Tencent({
+    const tencent = new Tencent.Tencent({
       config: {
         secretId: userConfig.secretId,
         secretKey: userConfig.secretKey
@@ -37,17 +37,17 @@ module.exports = (ctx) => {
     })
     tencent.translate(translate_en_str, "en", "zh-CN").then((data) => {
       let translate_str = "  ";
-      for(let i = 0; i < data.trans.paragraphs.length; i++) {
+      for (let i = 0; i < data.trans.paragraphs.length; i++) {
         translate_str = translate_str + data.trans.paragraphs[i] + "\n  ";
       }
-	  ctx.finishTranslate(translate_zh_str);
+      ctx.finishTranslate(translate_str);
     }).catch((resp) => console.warn(resp));
   }
   return {
-    TranslateName:"tengxun",
-	TranslateZhName:"腾讯翻译",
-    TranslateConfig:config,
-    TranslateRegister:register,
-    TranslateFunction:translate
+    TranslateName: "tengxun",
+    TranslateZhName: "腾讯翻译",
+    TranslateConfig: config,
+    TranslateRegister: register,
+    TranslateFunction: translate
   }
 }
