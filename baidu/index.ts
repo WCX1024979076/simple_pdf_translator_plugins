@@ -37,7 +37,14 @@ module.exports = (ctx) => {
       default: userConfig.appid || '',
       message: 'appid不能为空',
       required: true
-    }
+    },
+    {
+      name: 'secretkey',
+      type: 'password',
+      default: userConfig.secretkey || '',
+      message: 'secretkey不能为空',
+      required: true
+    }  
   ]
 
   const register = () => {
