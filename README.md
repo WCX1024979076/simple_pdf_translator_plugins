@@ -10,7 +10,7 @@
 
 3、TranslateConfig翻译配置要求模板如下，前端ui会根据配置要求生成相应的输入框并保存到相应文件中。
 
-```json
+```js
   const config = [
     {
       name: 'appid', //名称
