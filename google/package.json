@@ -10,6 +10,9 @@
   "devDependencies": {
 	"axios-https-proxy-fix": "^0.17.1"
   },
+  "scripts": {
+	"build" : "webpack"
+  },
   "dependencies": {
     "axios-https-proxy-fix": "^0.17.1"
   }

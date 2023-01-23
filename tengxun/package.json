@@ -11,6 +11,9 @@
     "@opentranslate/tencent": "^1.4.1",
 	 "tslib": "^2.4.1"
   },
+  "scripts": {
+	"build" : "webpack"
+  },
   "dependencies": {
     "@opentranslate/tencent": "^1.4.1",
 	"tslib": "^2.4.1"

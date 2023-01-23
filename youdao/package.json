@@ -7,6 +7,9 @@
     "name": "WCX1024979076",
     "url": "https://github.com/WCX1024979076"
   },
+  "scripts": {
+	"build" : "webpack"
+  },
   "devDependencies": {
 	"axios": "^1.2.1",
 	"crypto-js": "^4.1.1",
