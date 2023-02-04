@@ -54,7 +54,7 @@ module.exports = (ctx) => {
     ).then((data) => {
       let translate_str = "  ";
       for (let i = 0; i < data.data[0].length; i++) {
-        translate_str = translate_str + data.data[0][i][0] + "  ";
+        translate_str = translate_str + data.data[0][i][0];
       }
       ctx.finishTranslate(translate_str);
     }).catch((resp) => console.warn(resp));
