@@ -28,7 +28,7 @@ module.exports = (ctx) => {
       let translate_str = "  ";
       for (let i = 0; i < data.data.translateResult.length; i++) {
         for (let j = 0; j < data.data.translateResult[i].length; j++) {
-          translate_str = translate_str + data.data.translateResult[i][j].tgt + "  ";
+          translate_str = translate_str + data.data.translateResult[i][j].tgt;
         }
         translate_str = translate_str + "\n  ";
       }
